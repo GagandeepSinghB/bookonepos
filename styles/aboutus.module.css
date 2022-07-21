@@ -1,0 +1,100 @@
+.aboutContainer {
+}
+
+.secondSection {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 3px 8px 0px rgb(160, 159, 159);
+  margin: 100px 50px 50px 50px;
+  border-radius: 20px;
+  padding: 20px 20px;
+  max-width: 1293px;
+  margin-inline: auto;
+}
+
+.secondSection > .leftSection {
+  width: 60%;
+  padding: 0px 50px;
+  background: #020202;
+  color: white;
+  text-align: center;
+}
+
+.leftSectionContent {
+  position: relative;
+}
+
+.leftSectionContent > h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.leftSectionContent > .paragraph {
+  font-size: 20px;
+  font-weight: 400;
+  color: #bbb4b4;
+}
+
+.leftSectionContent > .paragraph > p {
+  margin: 0 0;
+}
+
+.secondSection > .rightSection {
+  width: 50%;
+}
+
+.secondSection > .rightSection > div {
+  width: 80%;
+  margin: auto;
+}
+
+/* .secondSection > .rightSection > div > li {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0;
+}
+
+.secondSection > .rightSection > ul > li::marker {
+  color: #4c6ed4;
+} */
+
+.secondSection > .rightSection > div > p {
+  margin: 0 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1100px) {
+  .secondSection {
+    flex-direction: column;
+    margin: 50px 10px;
+    padding: 0 0;
+  }
+  .secondSection > .leftSection {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  .leftSectionContent > h2 {
+    font-size: 30px;
+  }
+
+  .secondSection > .rightSection {
+    margin: 40px 0;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .secondSection > .rightSection > ul {
+    margin: 0 40px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .secondSection > .leftSection {
+    padding-inline: 10px;
+  }
+  .leftSectionContent > .paragraph {
+    text-align: left;
+    font-size: 15px;
+  }
+}

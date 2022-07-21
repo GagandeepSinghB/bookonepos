@@ -1,0 +1,137 @@
+.whyBookOnePosContainer {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  gap: 10%;
+}
+
+.whyBookOnePosLeftSection {
+  display: flex;
+}
+
+.srNo {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+.srNo > h1 {
+  background: #1e1e1e;
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+  text-align: center;
+  font-family: "Baskervville";
+  font-size: 80px;
+  color: #259bbf;
+  margin: 0;
+  padding-top: 4%;
+}
+
+.whyBookOnePosDesc {
+  background: #c3d8e3;
+  padding: 20px 30px 60px 30px;
+  margin-top: 90px;
+  width: 600px;
+  border-radius: 8px;
+}
+
+.whyBookOnePosDesc > h2 {
+  font-family: "Boogaloos", cursive;
+  font-weight: 600;
+  font-size: 30px;
+  color: #1d174d;
+  padding-left: 16px;
+}
+.whyBookOnePosDesc > h3 {
+  font-family: "Baskervville";
+  font-size: 25px;
+  font-weight: 400;
+  color: #675e5e;
+  padding-left: 30px;
+}
+
+.whyBookOnePosRightSection > img {
+  padding-top: 100px;
+  width: 100%;
+  max-width: 300px;
+}
+
+@media screen and (max-width: 1400px) {
+  .whyBookOnePosContainer {
+    flex-direction: column;
+  }
+
+  .whyBookOnePosLeftSection {
+    margin: auto;
+  }
+
+  .whyBookOnePosRightSection {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .whyBookOnePosLeftSection {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .whyBookOnePosContainer {
+    flex-direction: column;
+  }
+  .whyBookOnePosRightSection > img {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+  .whyBookOnePosLeftSection {
+    padding: 0;
+  }
+  .whyBookOnePosLeftSection > h1 {
+    height: 30px;
+    width: 30px;
+    font-size: 40px;
+  }
+  .whyBookOnePosDesc {
+    padding: 50px 10px;
+  }
+  .whyBookOnePosDesc > h2 {
+    margin-top: 0px;
+  }
+  .whyBookOnePosDesc > h3 {
+    margin-top: 0;
+    font-size: 18px;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .whyBookOnePosLeftSection {
+    position: relative;
+    left: -40px;
+  }
+
+  .whyBookOnePosDesc > h2 {
+    font-size: 25px;
+  }
+
+  .srNo {
+    left: 50%;
+  }
+
+  .srNo > h1 {
+    height: 90px;
+    width: 90px;
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .srNo > h1 {
+    height: 140px;
+    width: 140px;
+    font-size: 80px;
+  }
+}

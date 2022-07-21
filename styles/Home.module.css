@@ -1,0 +1,323 @@
+.heroContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: auto;
+  align-items: center;
+}
+
+.leftSection {
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+
+.polygon {
+  position: absolute;
+  width: 20%;
+  margin-top: 70px;
+  height: 250px;
+  min-height: 240px;
+  max-height: 250px;
+  right: -25px;
+  top: 5px;
+}
+
+.polygon > .polygonArrow {
+  width: 20%;
+  height: 100%;
+  min-width: 200px;
+}
+
+.heroText {
+  width: 80%;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  /* background-color: aqua; */
+}
+
+.heroText > .Text1 {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 63px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.05em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  letter-spacing: 2px;
+
+  color: #000000;
+}
+
+.Text2 {
+  text-align: center;
+  padding: 0px 50px;
+}
+
+.gradientText {
+  /* color: transparent;
+  background: linear-gradient(90.71deg, #1D174D 44.71%, #259BBF 73.75%, #E5E5E5 104.67%); */
+  background: -webkit-linear-gradient(
+    0deg,
+    #1d174d 44.71%,
+    #259bbf 73.75%,
+    #e5e5e5 104.67%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroTextButton {
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  border-radius: 15px;
+  border: 0px;
+  background: #259bbf;
+  color: #ffff;
+}
+
+.signUpContainer > .signUpImg {
+  margin: auto;
+  margin-right: 80px;
+  margin-left: 200px;
+  width: 60%;
+  padding: 20px 10px;
+  /* height: 100px; */
+}
+
+.signUpContainer > .signUpImg > img {
+  width: 100%;
+}
+
+/* Why bookone Design */
+
+.whyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.whyHeading {
+  font-size: 50px;
+  text-align: center;
+}
+
+.tabContainer {
+  width: 80%;
+  border-radius: 15px;
+  background-color: rgb(221, 221, 221);
+  user-select: none;
+}
+
+.whyUnorderedList {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  padding: 0px;
+  /* margin-left: 0px; */
+  /* gap: 98px; */
+}
+
+.whyOrderList {
+  height: 35px;
+  padding: 5px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  /* color: white;
+  background-color: black; */
+  /* width: 120px; */
+}
+.bottomGradient {
+  position: absolute;
+  top: 350px;
+  z-index: -1;
+  width: 20%;
+}
+
+/* Trusted By Restaurants Design */
+
+.trustedRestContainer {
+  background: #383838;
+  padding-block: 6vh;
+  margin-top: 150px;
+}
+
+.trustedRestContainer > h6 {
+  font-size: 50px;
+  text-align: center;
+  color: #fff2f2;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.trustedRestContainer > h6 > span {
+  background: -webkit-linear-gradient(0deg, #215d89, #259bbf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.showMore {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.showMore > button {
+  font-family: "Baskervville";
+  font-size: 1rem;
+  background: #259bbf;
+  color: white;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+}
+
+.showMore > button:hover {
+  background: #2bb0d9;
+  cursor: pointer;
+}
+
+/* Outlet Type Design */
+
+.outletTypeContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.outletType > h4 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.outletType > p {
+  font-size: 26px;
+  text-align: center;
+}
+
+.outletCards {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+}
+
+.outletCard {
+  margin-right: 25px;
+  margin-bottom: 50px;
+  height: 180px;
+  width: 180px;
+  border-radius: 7px;
+  background-color: #eeeeee;
+}
+
+@media screen and (max-width: 1400px) {
+  .leftSection {
+    width: 65%;
+  }
+
+  .cards {
+    max-width: 1050px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .heroContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .leftSection {
+    width: 100%;
+    justify-content: center;
+  }
+  .heroText {
+    margin-left: 0;
+    padding: 20px 0;
+    width: 90%;
+  }
+
+  .heroText > .Text1 {
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 45px;
+    letter-spacing: 0px;
+  }
+
+  .Text2 {
+    text-align: center;
+    padding: 0px 50px;
+  }
+  .polygon {
+    display: none;
+  }
+  .bottomGradient {
+    display: none;
+  }
+  .signUpContainer > .signUpImg {
+    width: 40%;
+    padding: 20px 0px;
+    margin: auto;
+  }
+  .outletCards {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .cards {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 1033px) {
+  .tabContainer {
+    /* width: 500px; */
+    max-width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    /* padding: 0 10px; */
+  }
+  .whyUnorderedList {
+    justify-content: flex-start;
+    /* margin: 0px 10px; */
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .trustedRestContainer {
+    font-size: 20px;
+  }
+  .outletCards {
+    flex-wrap: wrap;
+  }
+  .whyHeading {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cards {
+    max-width: min-content;
+  }
+}

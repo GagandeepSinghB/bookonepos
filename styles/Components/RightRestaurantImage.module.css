@@ -1,0 +1,100 @@
+.bigContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  max-width: 1500px;
+  width: 80%;
+}
+
+.nextImage {
+  margin: 0px 50px;
+  width: 30%;
+  min-width: 30vh;
+}
+
+.blogText {
+  flex: 1;
+}
+
+.blogText > h3 {
+  font-size: 50px;
+}
+
+.blogText > p {
+  font-size: 24px;
+}
+
+.knowButton {
+  border: none;
+  padding: 10px 40px;
+  border-radius: 8px;
+  background-color: #259bbf;
+  color: white;
+  margin-top: -40px;
+  cursor: pointer;
+}
+
+.kitchenSpan {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.descOrder {
+  font-size: 25px;
+  /* margin-top: -20px; */
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: 50px; */
+  max-width: 1500px;
+  width: 80%;
+}
+
+@media screen and (max-width: 1200px) {
+  .left > h3 {
+    font-size: 35px;
+  }
+
+  .left > p {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .bigContainer {
+    /* height: 0; */
+    margin: 0 0;
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  .leftContainer {
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .left {
+    text-align: center;
+  }
+}

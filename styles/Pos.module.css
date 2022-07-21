@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&display=swap");
+
+.title {
+  text-align: center;
+}
+
+.title > h5 {
+  font-family: "Boogaloo";
+  font-size: 70px;
+  margin: 0px;
+  margin-top: 30px;
+}
+
+.lines {
+  display: flex;
+}
+
+.blueLine,
+.yellowLine {
+  display: block;
+  height: 8px;
+  border: none;
+  border-radius: 10px;
+}
+
+.blueLine {
+  margin-right: 2px;
+  width: 200px;
+  background: #5993d9;
+}
+
+.yellowLine {
+  margin-left: 2px;
+  width: 70px;
+  background: #f6f961;
+}
+
+.descriptionHeading {
+  width: 75%;
+  margin: 60px auto;
+  font-family: "Boogaloo";
+  font-size: 35px;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+  /* margin: 0px 50px; */
+  width: 70%;
+  max-width: 1400px;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-family: "Baskerville";
+}
+
+.sectionOne {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+}
+
+.sectionOne > p {
+  font-size: 35px;
+  /* margin-top: -40px; */
+  /* width: 500px; */
+}
+
+.sectionOne > ul > li {
+  font-size: 20px;
+}
+
+.sectionTwo > img {
+  display: block;
+  margin-left: auto;
+  width: 70%;
+  min-width: 300px;
+}
+
+@media screen and (max-width: 1200px) {
+  .title > h5 {
+    font-size: 40px;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 90%;
+
+    /* align-items: center; */
+  }
+  .sectionOne {
+    width: 100%;
+  }
+
+  .sectionOne > p {
+    font-size: 25px;
+  }
+
+  .sectionTwo > img {
+    width: 30%;
+    margin: auto;
+    margin-block: 30px;
+  }
+}

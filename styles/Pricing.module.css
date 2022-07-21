@@ -1,0 +1,168 @@
+.container {
+  margin-top: 80px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.firstSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  /* text-align: left; */
+  /* justify-content: space-between; */
+}
+
+.firstHead {
+  width: 60%;
+}
+
+.firstHead > h3 {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: 40px;
+}
+
+.firstHead > p {
+  /* font-size: 20px; */
+}
+
+.firstHead > h3 > span {
+  background: -webkit-linear-gradient(
+    0deg,
+    #1d174d 44.71%,
+    #259bbf 73.75%,
+    #e5e5e5 104.67%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.secondSection > h4 {
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.whatYouContainer {
+  box-shadow: 0px 3px 8px 0px rgb(160, 159, 159);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  padding-block: 30px;
+}
+
+.firstWhatGet {
+  width: 50%;
+}
+
+.part {
+  display: flex;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  background: #a7adc0;
+  border-radius: 50%;
+}
+
+.content {
+  margin-left: 10px;
+  height: 120px;
+  width: 80%;
+}
+
+.content > h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.content > p {
+  margin-top: 5px;
+}
+
+.thirdSection {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: auto;
+  margin-top: 100px;
+
+  /* margin-right: 20px; */
+}
+
+.imgSection {
+  margin-top: 40px;
+  width: 35%;
+}
+.imgSection > img {
+  width: 100%;
+}
+
+.basicAndPremiumContainer {
+  box-shadow: 0px 3px 8px 0px rgb(160, 159, 159);
+  border-radius: 15px;
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.basicAndPremiumContainer > h2 {
+  font-size: 35px;
+}
+
+.basicAndPremiumContainer > ul > li {
+  font-size: 22px;
+}
+
+.basicAndPremiumContainer > ul > li::marker {
+  color: #4c6ed4;
+}
+
+@media screen and (max-width: 1410px) {
+  .content {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .firstSection {
+    flex-direction: column;
+    text-align: left;
+  }
+  .whatYouContainer {
+    flex-direction: column;
+    width: 95%;
+  }
+  .thirdSection {
+    flex-direction: column;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .firstHead {
+    width: 90%;
+    /* margin: 0px 50px; */
+  }
+
+  .firstWhatGet {
+    width: 100%;
+  }
+
+  .content {
+    height: fit-content;
+  }
+}
