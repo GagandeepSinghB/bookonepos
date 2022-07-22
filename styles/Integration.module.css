@@ -5,9 +5,10 @@
 .heroContainer {
   display: flex;
   justify-content: space-between;
-  max-width: 1500px;
+  max-width: 1200px;
   margin: auto;
   align-items: center;
+  text-align: center;
 }
 
 .onlineContainer {
@@ -45,10 +46,10 @@
 }
 
 .heroText > .Text1 {
-  font-family: "DM Sans";
+  /* font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 50px;
   line-height: 63px;
   display: flex;
   align-items: center;
@@ -59,7 +60,10 @@
   margin: 0;
   letter-spacing: 2px;
   margin-top: -20px;
-  color: #000000;
+  color: #000000; */
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
 }
 
 .Text2 {
