@@ -22,7 +22,7 @@ export async function getStaticProps() {
 }
 
 function AboutUs(props) {
-  console.log(props.test2);
+  console.log(props.test1);
   return (
     <div className={styles.aboutContainer}>
       <TopImageSection
@@ -32,6 +32,9 @@ function AboutUs(props) {
         // description={props.test1[0].fields.aboutText}
         description={documentToReactComponents(props.test1[0].fields.aboutText)}
       />
+      <div className={styles.TopImageSectionBottom}>
+        {documentToReactComponents(props.test1[0].fields.aboutTextBottom)}
+      </div>
       <div className={styles.secondSection}>
         <div className={styles.leftSection}>
           <div className={styles.leftSectionContent}>
