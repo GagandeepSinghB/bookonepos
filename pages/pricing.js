@@ -1,6 +1,6 @@
 import React from "react";
 import { createClient } from "contentful";
-import Benefits from "../components/benefits";
+import Benefits from "../components/Benefits";
 import styles from "../styles/Pricing.module.css";
 
 export async function getStaticProps() {
