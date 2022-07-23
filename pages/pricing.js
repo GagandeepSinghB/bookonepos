@@ -9,16 +9,19 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
-  const res = await client.getEntries({ content_type: "pricingPage1" });
+  const res1 = await client.getEntries({ content_type: "pricingPage1" });
+  const res2 = await client.getEntries({ content_type: "pricingTopSection" });
 
   return {
     props: {
-      test: res.items,
+      test: res1.items,
+      test1: res2.items,
     },
   };
 }
 
 const Pricing = (props) => {
+  console.log(props.test1);
   return (
     <div className={styles.bigContainer}>
       <div className={styles.container}>
@@ -28,14 +31,11 @@ const Pricing = (props) => {
           </div>
           <div className={styles.firstHead}>
             <h3>
-              Lorem <span>Ipsum</span>
+              {props.test1[0].fields.heading1}{" "}
+              <span>{props.test1[0].fields.heading2}</span>{" "}
+              {props.test1[0].fields.heading3}
             </h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <p>{props.test1[0].fields.description}</p>
           </div>
         </div>
         <div className={styles.secondSection}>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { createClient } from "contentful";
 import styles from "../styles/Integration.module.css";
 import TopImageSection from "../components/TopImageSection";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -20,13 +21,19 @@ export async function getStaticProps() {
 }
 
 export default function Integration(props) {
+  console.log(props);
   return (
     <div className={styles.container}>
       <div className={styles.heroContainer}>
         <TopImageSection
           image="/integration.svg"
-          headingLeft={props.test[0].fields.aFullyIntegratedSoftware}
-          headingRight=""
+          headingLeft={documentToReactComponents(props.test[0].fields.heading1)}
+          headingRight={documentToReactComponents(
+            props.test[0].fields.heading2
+          )}
+          headingRightmost={documentToReactComponents(
+            props.test[0].fields.integrationPageTitle
+          )}
           description={props.test[0].fields.aboutIntegration}
         />
         {/* <div className={styles.signUpContainer}>

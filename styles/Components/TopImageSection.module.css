@@ -33,7 +33,23 @@
   font-size: 50px;
 }
 
+.rightSection > h1 > p {
+  display: inline-block;
+  margin: 0;
+}
+
 .gradientText {
+  background: -webkit-linear-gradient(
+    0deg,
+    #1d174d 44.71%,
+    #259bbf 73.75%,
+    #e5e5e5 104.67%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText > p {
   /* color: transparent;
     background: linear-gradient(90.71deg, #1D174D 44.71%, #259BBF 73.75%, #E5E5E5 104.67%); */
   background: -webkit-linear-gradient(
@@ -44,6 +60,8 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0;
+  display: inline-block;
 }
 
 @media screen and (max-width: 1100px) {
