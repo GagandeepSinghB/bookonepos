@@ -1,7 +1,24 @@
 import React from "react";
+import { createClient } from "contentful";
+import Benefits from "../components/benefits";
 import styles from "../styles/Pricing.module.css";
 
-const Pricing = () => {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "pricingPage1" });
+
+  return {
+    props: {
+      test: res.items,
+    },
+  };
+}
+
+const Pricing = (props) => {
   return (
     <div className={styles.bigContainer}>
       <div className={styles.container}>
@@ -24,7 +41,10 @@ const Pricing = () => {
         <div className={styles.secondSection}>
           <h4>What you get?</h4>
           <div className={styles.whatYouContainer}>
-            <div className={styles.firstWhatGet}>
+            {props.test.map((benefit) => (
+              <Benefits key={benefit.sys.id} benefit={benefit} />
+            ))}
+            {/* <div className={styles.firstWhatGet}>
               <ul>
                 <div className={styles.part}>
                   <div className={styles.circle}></div>
@@ -94,7 +114,7 @@ const Pricing = () => {
                   </div>
                 </div>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.thirdSection}>

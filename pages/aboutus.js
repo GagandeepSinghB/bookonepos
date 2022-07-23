@@ -22,7 +22,6 @@ export async function getStaticProps() {
 }
 
 function AboutUs(props) {
-  console.log(props.test1);
   return (
     <div className={styles.aboutContainer}>
       <TopImageSection

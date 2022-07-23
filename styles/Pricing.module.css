@@ -53,15 +53,14 @@
 .whatYouContainer {
   box-shadow: 0px 3px 8px 0px rgb(160, 159, 159);
   border-radius: 15px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-gap: 30px;
   justify-content: space-evenly;
-  width: 80%;
   margin: auto;
-  padding-block: 30px;
-}
-
-.firstWhatGet {
-  width: 50%;
+  padding: 40px 40px;
+  width: 95%;
+  max-width: 1200px;
 }
 
 .part {
@@ -77,8 +76,7 @@
 
 .content {
   margin-left: 10px;
-  height: 120px;
-  width: 80%;
+  width: 90%;
 }
 
 .content > h1 {
@@ -140,15 +138,18 @@
 @media screen and (max-width: 1100px) {
   .firstSection {
     flex-direction: column;
-    text-align: left;
   }
+
   .whatYouContainer {
-    flex-direction: column;
     width: 95%;
   }
   .thirdSection {
     flex-direction: column;
     width: 85%;
+  }
+  .secondSection > h4 {
+    font-size: 40px;
+    margin: 20px auto;
   }
 }
 
@@ -158,11 +159,39 @@
     /* margin: 0px 50px; */
   }
 
+  .firstHead > h3 {
+    font-size: 40px;
+  }
+
+  .firstHead > p {
+    text-align: left;
+  }
+
   .firstWhatGet {
     width: 100%;
   }
 
   .content {
     height: fit-content;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .whatYouContainer {
+    grid-template-columns: 100%;
+  }
+  .circle {
+    display: none;
+  }
+  .content {
+    display: list-item;
+    width: fit-content;
+  }
+  .content::marker {
+    font-size: 20px;
+    color: #4c6ed4;
+  }
+  .content > h1 {
+    font-size: 20px;
   }
 }

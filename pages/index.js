@@ -5,10 +5,26 @@ import { useState } from "react";
 import LeftRestaurantImage from "../components/LeftRestaurantImage";
 import WhyBookOnePos from "../components/WhyBookOnePos";
 import TrustedCard from "../components/TrustedCard";
-
 import { AiOutlineDown } from "react-icons/ai";
+import { createClient } from "contentful";
 
-export default function Home() {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "homePage" });
+
+  return {
+    props: {
+      test: res.items,
+    },
+  };
+}
+
+export default function Home(props) {
+  console.log(props);
   const [whyBookOnePos, setWhyBookOnePos] = useState({
     number: "01",
     description: {
@@ -24,44 +40,6 @@ export default function Home() {
   const [efficient, setEfficient] = useState(false);
   const [integration, setIntegration] = useState(false);
   const [bottom, setBottom] = useState(false);
-
-  // const leftRightImgData = [
-  //   {
-  //     left: {
-  //       heading: "Qracle",
-  //       desc: "A QR scanner that enables guests to order meals from their table without having to call or wait for the waiter to deliver the menu card.",
-  //       img: "/oracle.jpg",
-  //       btn: true,
-  //     },
-  //     right: {
-  //       heading: "Cross Platform",
-  //       desc: "Our POS is capable of giving you insights into what is best for you. Such reports help you make better merchandising and pricing decisions in the future.",
-  //       img: "/report.png",
-  //     },
-  //   },
-  //   {
-  //     left: {
-  //       heading: "KOT",
-  //       desc: "Reducing the risk due to manual mistakes, KOT saves time plus it greatly helps the management to have real-time reporting of all the orders that are placed at your restaurant.",
-  //       img: "/kot.png",
-  //       brackQuote: true,
-  //     },
-  //     right: {
-  //       heading: "Complete Order Management",
-  //       desc: false,
-  //       img: "/management.png",
-  //       btn: true,
-  //       descOrder: true,
-  //     },
-  //   },
-  //   {
-  //     left: {
-  //       heading: "Report Generation",
-  //       desc: "  .",
-  //       img: "/report.png",
-  //     },
-  //   },
-  // ];
 
   const easyClick = () => {
     setEasy(!easy);
@@ -316,28 +294,6 @@ export default function Home() {
           <h6>
             Trusted by <span>500+</span> Restaurants Partners
           </h6>
-          {/* {leftRightImgData.map((val, i) => {
-            return (
-              <div key={i + 2}>
-                <LeftRestaurantImage
-                  heading={val.left.heading}
-                  desc={val.left.desc}
-                  img={val.left.img}
-                  btn={val.left.btn}
-                  brackQuote={val.left.brackQuote}
-                />
-                {val.right && (
-                  <RightRestaurantImage
-                    heading={val.right.heading}
-                    desc={val.right.desc}
-                    img={val.right.img}
-                    btn={val.right.btn}
-                    descOrder={val.right.descOrder}
-                  />
-                )}
-              </div>
-            );
-          })} */}
           <div className={styles.cards}>
             <TrustedCard
               image="/oracle.jpg"
@@ -413,4 +369,67 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+// const leftRightImgData = [
+//   {
+//     left: {
+//       heading: "Qracle",
+//       desc: "A QR scanner that enables guests to order meals from their table without having to call or wait for the waiter to deliver the menu card.",
+//       img: "/oracle.jpg",
+//       btn: true,
+//     },
+//     right: {
+//       heading: "Cross Platform",
+//       desc: "Our POS is capable of giving you insights into what is best for you. Such reports help you make better merchandising and pricing decisions in the future.",
+//       img: "/report.png",
+//     },
+//   },
+//   {
+//     left: {
+//       heading: "KOT",
+//       desc: "Reducing the risk due to manual mistakes, KOT saves time plus it greatly helps the management to have real-time reporting of all the orders that are placed at your restaurant.",
+//       img: "/kot.png",
+//       brackQuote: true,
+//     },
+//     right: {
+//       heading: "Complete Order Management",
+//       desc: false,
+//       img: "/management.png",
+//       btn: true,
+//       descOrder: true,
+//     },
+//   },
+//   {
+//     left: {
+//       heading: "Report Generation",
+//       desc: "  .",
+//       img: "/report.png",
+//     },
+//   },
+// ];
+
+{
+  /* {leftRightImgData.map((val, i) => {
+  return (
+    <div key={i + 2}>
+      <LeftRestaurantImage
+        heading={val.left.heading}
+        desc={val.left.desc}
+        img={val.left.img}
+        btn={val.left.btn}
+        brackQuote={val.left.brackQuote}
+      />
+      {val.right && (
+        <RightRestaurantImage
+          heading={val.right.heading}
+          desc={val.right.desc}
+          img={val.right.img}
+          btn={val.right.btn}
+          descOrder={val.right.descOrder}
+          />
+          )}
+          </div>
+          );
+})} */
 }
