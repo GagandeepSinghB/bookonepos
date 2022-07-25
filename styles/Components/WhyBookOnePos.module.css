@@ -5,6 +5,14 @@
   gap: 10%;
 }
 
+.qwerty {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  gap: 10%;
+  width: 100px;
+}
+
 .whyBookOnePosLeftSection {
   display: flex;
 }
@@ -125,6 +133,12 @@
     height: 90px;
     width: 90px;
     font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .whyBookOnePosContainer {
+    width: 100%;
   }
 }
 

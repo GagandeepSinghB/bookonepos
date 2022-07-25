@@ -119,6 +119,7 @@
   border-radius: 15px;
   background-color: rgb(221, 221, 221);
   user-select: none;
+  display: flex;
 }
 
 .whyUnorderedList {
@@ -127,6 +128,7 @@
   justify-content: space-evenly;
   /* flex-wrap: wrap; */
   padding: 0px;
+  margin: 15px auto;
   /* margin-left: 0px; */
   /* gap: 98px; */
 }

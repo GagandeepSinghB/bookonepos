@@ -1,20 +1,21 @@
 import React from "react";
 import styles from "../styles/Components/WhyBookOnePos.module.css";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-function WhyBookOnePos({ number, description, img }) {
+function WhyBookOnePos(props) {
   return (
     <div className={styles.whyBookOnePosContainer}>
       <div className={styles.whyBookOnePosLeftSection}>
         <div className={styles.srNo}>
-          <h1>{number}</h1>
+          <h1>01</h1>
         </div>
         <div className={styles.whyBookOnePosDesc}>
-          <h2>{description.h2}</h2>
-          <h3>{description.h3}</h3>
+          <h2>{props.title}</h2>
+          <h3>{props.content}</h3>
         </div>
       </div>
       <div className={styles.whyBookOnePosRightSection}>
-        <img src={img} alt="" />
+        <img src={"https:" + props.image} alt="" />
       </div>
     </div>
   );
