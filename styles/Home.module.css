@@ -129,6 +129,7 @@
   /* flex-wrap: wrap; */
   padding: 0px;
   margin: 15px auto;
+
   /* margin-left: 0px; */
   /* gap: 98px; */
 }
@@ -139,10 +140,16 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 15px;
-  /* color: white;
-  background-color: black; */
+  /* color: white;*/
+  /* background-color: black; */
   /* width: 120px; */
 }
+
+.WhyOrderList:focus-visible {
+  background-color: #000000;
+  color: #fff;
+}
+
 .bottomGradient {
   position: absolute;
   top: 350px;
@@ -303,6 +310,14 @@
   .whyUnorderedList {
     justify-content: flex-start;
     /* margin: 0px 10px; */
+  }
+  .outletType > h4 {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
+  .outletType > p {
+    font-size: 20px;
   }
 }
 
