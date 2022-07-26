@@ -81,7 +81,7 @@
   .rightSection {
     width: 100%;
     max-width: none;
-    text-align: left;
+    /* text-align: left; */
     padding: 0 15px;
   }
 }

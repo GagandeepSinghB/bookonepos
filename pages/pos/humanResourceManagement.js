@@ -34,7 +34,7 @@ export default function InventoryManagement(props) {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.sectionOne}>
+        <div className={styles.sectionHRM_Cus}>
           {documentToReactComponents(props.test[0].fields.hrmContent)}
         </div>
         <div className={styles.sectionTwo}>

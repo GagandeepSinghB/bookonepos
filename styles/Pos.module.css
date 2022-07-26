@@ -58,8 +58,17 @@
   justify-content: center;
   flex-direction: column;
   width: 60%;
+  /* text-align: center; */
+}
+.sectionHRM_Cus {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  /* text-align: center; */
 }
 
+.sectionHRM_Cus > p,
 .sectionOne > p {
   font-size: 35px;
   /* margin-top: -40px; */
@@ -83,15 +92,17 @@
   }
 
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 90%;
 
     /* align-items: center; */
   }
+  .sectionHRM_Cus,
   .sectionOne {
     width: 100%;
   }
 
+  .sectionHRM_Cus > p,
   .sectionOne > p {
     font-size: 25px;
   }
@@ -100,5 +111,15 @@
     width: 30%;
     margin: auto;
     margin-block: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sectionHRM_Cus {
+    text-align: center;
+  }
+  .descriptionHeading {
+    width: 90%;
+    font-size: 25px;
   }
 }

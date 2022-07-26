@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { useState } from "react";
 
 export default function WhyBookOnePosNav(props) {
   function test() {
@@ -12,7 +13,13 @@ export default function WhyBookOnePosNav(props) {
 
   return (
     <ul className={styles.whyUnorderedList}>
-      <li className={styles.whyOrderList} onClick={test}>
+      <li
+        className={styles.whyOrderList}
+        onClick={() => {
+          test();
+          // toggleClass();
+        }}
+      >
         {props.feature.fields.shortTitle}
       </li>
     </ul>
