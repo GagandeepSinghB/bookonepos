@@ -14,26 +14,26 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
-  const res = await client.getEntries({ content_type: "homePage" });
+  const res1 = await client.getEntries({ content_type: "homePage" });
 
   return {
     props: {
-      test: res.items,
+      test1: res1.items,
     },
   };
 }
 
 export default function Home(props) {
-  const [passedId, setPassedId] = useState(props.test[0].sys.id);
-  const [title, setTitle] = useState(props.test[0].fields.title);
+  const [passedId, setPassedId] = useState(props.test1[0].sys.id);
+  const [title, setTitle] = useState(props.test1[0].fields.title);
   const [content, setContent] = useState(
-    documentToReactComponents(props.test[0].fields.content)
+    documentToReactComponents(props.test1[0].fields.content)
   );
   const [image, setImage] = useState(
-    props.test[0].fields.image.fields.file.url
+    props.test1[0].fields.image.fields.file.url
   );
 
-  console.log(passedId);
+  // console.log(passedId);
 
   return (
     <div>
@@ -79,7 +79,7 @@ export default function Home(props) {
           <h3 className={styles.whyHeading}>Why BookOne POS?</h3>
 
           <div className={styles.tabContainer}>
-            {props.test.map((feature) => (
+            {props.test1.map((feature) => (
               <WhyBookOnePosNav
                 key={feature.sys.id}
                 feature={feature}
@@ -99,7 +99,7 @@ export default function Home(props) {
             Trusted by <span>500+</span> Restaurants Partners
           </h6>
           <div className={styles.cards}>
-            <TrustedCard
+            {/* <TrustedCard
               image="/oracle.jpg"
               title="Qracle"
               desc="true"
@@ -128,7 +128,7 @@ export default function Home(props) {
               title="Report Generation"
               desc="true"
               description="Our POS is capable of giving you insights into what is best for you. Such reports help you make better merchandising and pricing decisions in the future."
-            />
+            /> */}
           </div>
           <div className={styles.showMore}>
             <button>
