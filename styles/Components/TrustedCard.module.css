@@ -30,10 +30,12 @@
 .description {
   height: 110px;
   font-family: "Baskervville";
+  color: #9f9a9a;
 }
 
-.description > p {
-  color: #9f9a9a;
+.description > ul > li > p {
+  margin: 0;
+  text-align: left;
 }
 
 .descUnorder {

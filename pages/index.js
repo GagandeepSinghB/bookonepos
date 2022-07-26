@@ -15,15 +15,28 @@ export async function getStaticProps() {
   });
 
   const res1 = await client.getEntries({ content_type: "homePage" });
+  const res2 = await client.getEntries({
+    content_type: "homePageTrustedClients",
+  });
+  const res3 = await client.getEntries({ content_type: "homePageTopPartHero" });
+  const res4 = await client.getEntries({ content_type: "homePageOutletType" });
 
   return {
     props: {
       test1: res1.items,
+      test2: res2.items,
+      test3: res3.items,
+      test4: res4.items,
     },
   };
 }
 
 export default function Home(props) {
+  // console.log(props.test1);
+  // console.log(props.test2);
+  // console.log(props.test3);
+  console.log(props.test4);
+
   const [passedId, setPassedId] = useState(props.test1[0].sys.id);
   const [title, setTitle] = useState(props.test1[0].fields.title);
   const [content, setContent] = useState(
@@ -46,20 +59,20 @@ export default function Home(props) {
         <div className={styles.leftSection}>
           <div className={styles.heroText}>
             <h1 className={styles.Text1}>
-              First
+              {props.test3[0].fields.title}
               <span
                 className={styles.gradientText}
                 style={{ marginLeft: "15px", marginRight: "15px" }}>
-                mobile
+                {props.test3[0].fields.title2}
               </span>{" "}
-              POS software
+              {props.test3[0].fields.title3}
             </h1>
-            <p className={styles.Text2}>
-              BookOnePOS solutions is unrivaled for providing a robust and
-              flexible POS system that is reliable and unwavering in its
-              performance, no matter the demands of your venue.
-            </p>
-            <button className={styles.heroTextButton}>Take a Free demo</button>
+            <div className={styles.Text2}>
+              {documentToReactComponents(props.test3[0].fields.description)}
+            </div>
+            <button className={styles.heroTextButton}>
+              {props.test3[0].fields.demoButton}
+            </button>
           </div>
 
           <div className={styles.polygon}>
@@ -99,36 +112,9 @@ export default function Home(props) {
             Trusted by <span>500+</span> Restaurants Partners
           </h6>
           <div className={styles.cards}>
-            {/* <TrustedCard
-              image="/oracle.jpg"
-              title="Qracle"
-              desc="true"
-              description="A QR scanner that enables guests to order meals from their table without having to call or wait for the waiter to deliver the menu card."
-            />
-            <TrustedCard
-              image="/report.png"
-              title="Cross Platform"
-              desc="true"
-              description="Our POS is capable of giving you insights into what is best for you. Such reports help you make better merchandising and pricing decisions in the future."
-            />
-            <TrustedCard
-              image="/kot.png"
-              title="KOT"
-              brackQuote="true"
-              desc="true"
-              description="Reducing the risk due to manual mistakes, KOT saves time plus it greatly helps the management to have real-time reporting of all the orders that are placed at your restaurant."
-            />
-            <TrustedCard
-              image="/management.png"
-              title="Complete Order Management"
-              descOrder="true"
-            />
-            <TrustedCard
-              image="/report.png"
-              title="Report Generation"
-              desc="true"
-              description="Our POS is capable of giving you insights into what is best for you. Such reports help you make better merchandising and pricing decisions in the future."
-            /> */}
+            {props.test2.map((card) => (
+              <TrustedCard key={card.sys.id} card={card} />
+            ))}
           </div>
           <div className={styles.showMore}>
             <button>
@@ -138,17 +124,26 @@ export default function Home(props) {
         </div>
         <div className={styles.outletTypeContainer}>
           <div className={styles.outletType}>
-            <h4>Outlet Types</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing <br /> elit,
-              sed do eiusmod tempor incididunt.
-            </p>
+            <h4>{props.test4[0].fields.title}</h4>
+            <div>
+              {documentToReactComponents(props.test4[0].fields.description)}
+            </div>
             <div className={styles.outletCards}>
-              <div className={styles.outletCard}>{/* <h6>My Card</h6> */}</div>
-              <div className={styles.outletCard}>{/* <h6>My Card</h6> */}</div>
-              <div className={styles.outletCard}>{/* <h6>My Card</h6> */}</div>
-              <div className={styles.outletCard}>{/* <h6>My Card</h6> */}</div>
-              <div className={styles.outletCard}>{/* <h6>My Card</h6> */}</div>
+              <div className={styles.outletCard}>
+                {/* Content in contentful not updated */}
+              </div>
+              <div className={styles.outletCard}>
+                {/* Content in contentful not updated */}
+              </div>
+              <div className={styles.outletCard}>
+                {/* Content in contentful not updated */}
+              </div>
+              <div className={styles.outletCard}>
+                {/* Content in contentful not updated */}
+              </div>
+              <div className={styles.outletCard}>
+                {/* Content in contentful not updated */}
+              </div>
             </div>
           </div>
         </div>
