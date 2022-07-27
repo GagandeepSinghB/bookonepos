@@ -45,7 +45,7 @@ export default function Home(props) {
   const [image, setImage] = useState(
     props.test1[0].fields.image.fields.file.url
   );
-  const [srNo, setSrNo] = useState();
+  const [srNo, setSrNo] = useState(1);
 
   // console.log(passedId);
 
@@ -63,7 +63,8 @@ export default function Home(props) {
               {props.test3[0].fields.title}
               <span
                 className={styles.gradientText}
-                style={{ marginLeft: "15px", marginRight: "15px" }}>
+                style={{ marginLeft: "15px", marginRight: "15px" }}
+              >
                 {props.test3[0].fields.title2}
               </span>{" "}
               {props.test3[0].fields.title3}
