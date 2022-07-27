@@ -7,7 +7,7 @@ function WhyBookOnePos(props) {
     <div className={styles.whyBookOnePosContainer}>
       <div className={styles.whyBookOnePosLeftSection}>
         <div className={styles.srNo}>
-          <h1>01</h1>
+          <h1>0{props.srNo}</h1>
         </div>
         <div className={styles.whyBookOnePosDesc}>
           <h2>{props.title}</h2>

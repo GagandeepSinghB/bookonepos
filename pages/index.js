@@ -45,6 +45,7 @@ export default function Home(props) {
   const [image, setImage] = useState(
     props.test1[0].fields.image.fields.file.url
   );
+  const [srNo, setSrNo] = useState();
 
   // console.log(passedId);
 
@@ -92,19 +93,26 @@ export default function Home(props) {
           <h3 className={styles.whyHeading}>Why BookOne POS?</h3>
 
           <div className={styles.tabContainer}>
-            {props.test1.map((feature) => (
+            {props.test1.map((feature, index) => (
               <WhyBookOnePosNav
                 key={feature.sys.id}
                 feature={feature}
+                index={index}
                 passedId={setPassedId}
                 setTitle={setTitle}
                 setContent={setContent}
                 setImage={setImage}
+                setSrNo={setSrNo}
               />
             ))}
           </div>
 
-          <WhyBookOnePos title={title} content={content} image={image} />
+          <WhyBookOnePos
+            title={title}
+            content={content}
+            image={image}
+            srNo={srNo}
+          />
         </div>
 
         <div className={styles.trustedRestContainer}>
