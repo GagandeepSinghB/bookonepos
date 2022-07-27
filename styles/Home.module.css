@@ -145,10 +145,6 @@
   /* width: 120px; */
 }
 
-.WhyOrderList:focus-visible {
-  background-color: #000000;
-  color: #fff;
-}
 
 .bottomGradient {
   position: absolute;
