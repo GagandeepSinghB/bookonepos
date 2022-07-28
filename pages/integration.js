@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import Link from "next/link";
 import { createClient } from "contentful";
 import styles from "../styles/Integration.module.css";
@@ -86,6 +86,11 @@ export default function Integration(props) {
               <div className={styles.content}>
                 <Link href="/">
                   <img src="/Payment Icons.png" alt="" />
+                </Link>
+              </div>
+              <div className={styles.content}>
+                <Link href="/">
+                  <img src="/paytm_logo.png" alt="" />
                 </Link>
               </div>
             </div>
