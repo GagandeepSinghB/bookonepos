@@ -3,4 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+    images: {
+      loader: 'akamai',
+      path: '',
+    },
+  // experimental: {
+  //   images: {
+  //     unoptimized: true,
+  //     loader: 'imgix',
+  //     path:"/"
+  //   }
+  // }
+}
